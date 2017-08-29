@@ -1,34 +1,32 @@
 console.log("hello");
 
-function executeThisCodeAfterFileLoads(){
+function executeThisCodeAfterDogsLoads(){
 	var data = JSON.parse(this.responseText).dogs;
 	console.log("dogs", data);
 }
 
 
-function executeThisCodeIfFileErrors(){
+function executeThisCodeIfDogsErrors(){
 	console.log("it broken");
 }
 
-var myRequest = new XMLHttpRequest();
-myRequest.addEventListener("load", executeThisCodeAfterFileLoads);
-myRequest.addEventListener("error", executeThisCodeIfFileErrors);
-myRequest.open("GET", "dogs.json");
-myRequest.send();
+function executeThisCodeAfterBreedsLoads(){
+	var data = JSON.parse(this.responseText).breeds;
+	console.log("breeds", data);
+}
 
-// function executeThisCodeAfterFileLoads2(){
-// 	var data = JSON.parse(this.responseText);
-// 	var breedsArray = data.breeds;
-// 	console.log(breedsArray);
-// }
+function executeThisCodeIfBreedsErrors(){
+	console.log("it broken");
+}
 
+var myDogs = new XMLHttpRequest();
+myDogs.addEventListener("load", executeThisCodeAfterDogsLoads);
+myDogs.addEventListener("error", executeThisCodeIfDogsErrors);
+myDogs.open("GET", "dogs.json");
+myDogs.send();
 
-// function executeThisCodeIfFileErrors2(){
-// 	console.log("it broken");
-// }
-
-// var myRequest2 = new XMLHttpRequest();
-// myRequest.addEventListener("load", executeThisCodeAfterFileLoads);
-// myRequest.addEventListener("error", executeThisCodeIfFileErrors);
-// myRequest.open("GET", "breeds.json");
-// myRequest.send();
+var myBreeds = new XMLHttpRequest();
+myBreeds.addEventListener("load", executeThisCodeAfterBreedsLoads);
+myBreeds.addEventListener("error", executeThisCodeIfBreedsErrors);
+myBreeds.open("GET", "breeds.json");
+myBreeds.send();
