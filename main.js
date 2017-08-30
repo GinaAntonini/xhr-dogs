@@ -59,15 +59,16 @@ function combinedArray(dogsArray, breedsArray){
 	});
 
 	console.log("all the dogs", dogsArray);
-	domString(dogsArray)
+	// domString(dogsArray)
 }
 
-function domString(dogs){
-	var reallyLongDomString = "";
-		for (var i = 0; i < dogs.length; i++){
-			writeToDom(reallyLongDomString);
-}
+// function domString(dogs){
+// 	var reallyLongDomString = "";
+// 		for (var i = 0; i < dogs.length; i++){
+// 			writeToDom(reallyLongDomString);
+// 	}
+// }
 
-function writeToDom(){
+// function writeToDom(){
 
-}
+// }
